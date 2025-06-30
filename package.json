@@ -1,0 +1,20 @@
+{
+  "name": "the-company",
+  "version": "1.0.0",
+  "main": "index.js",
+"scripts": {
+  "dev": "vite"
+},
+
+"repository": {
+    "type": "git",
+    "url": "git+https://github.com/BABAYAGA108/The-company.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BABAYAGA108/The-company/issues"
+  },
+  "homepage": "https://github.com/BABAYAGA108/The-company#readme",
+  "description": ""
+}

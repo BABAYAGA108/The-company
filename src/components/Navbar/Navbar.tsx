@@ -1,8 +1,8 @@
 import logo from '../../assets/the company logo.jpeg'
 const Navbar = () => {
   return (
-    <nav>
-      <div>
+    <nav className='bg-primary shadow-md py-4 sm:py-0'>
+      <div className='container flex justify-between items-center'>
         <div className="flex items-center gap-2">
           <a
             href="#"
@@ -11,10 +11,10 @@ const Navbar = () => {
             <img
               src={logo}
               alt="logo"
-              className="object-contain w-12 h-12"
+              className="object-contain w-12 h-12 rounded-bl-full"
             />
           </a>
-          <span className="text-2xl font-bold ">The Company</span>
+          <span className="text-2xl font-bold sm:text-3xl flex gap-2 ">The Company</span>
         </div>
         <div>
           <form

@@ -1,8 +1,10 @@
-import ListGroup from "./components/listGroup";
+import Navbar from './components/Navbar/Navbar';
+
 function App() {
   return (
     <div>
-      <ListGroup />
+      <Navbar />
+
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import logo from '../../assets/the company logo.jpeg'
+import { SlMagnifier } from "react-icons/sl";
 const Navbar = () => {
   return (
     <nav className='bg-primary shadow-md py-4 sm:py-0'>
@@ -31,6 +32,9 @@ const Navbar = () => {
               placeholder="Search..."
               className="w-[200px] sm:w-[200px] group-hover:w-[300px] transition-all duration-300 rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-orange-400"
             />
+            <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 font-semibold">
+              <SlMagnifier />
+            </button>
           </form>
         </div>
         <div className="flex items-center gap-4">

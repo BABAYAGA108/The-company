@@ -1,5 +1,7 @@
+import { useState } from "react";
 import logo from "../../assets/the company logo.jpeg";
 import { SlMagnifier } from "react-icons/sl";
+import { FiMenu, FiX } from "react-icons/fi"; // Import menu and close icons
 import Darkmode from "../Darkmode";
 
 const menuItems = [
@@ -10,8 +12,14 @@ const menuItems = [
 ];
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <nav className="bg-primary shadow-md py-4">
+    <nav className="bg-primary shadow-md py-4 relative">
       <div className="container mx-auto flex flex-wrap justify-between items-center px-4">
         {/* Logo and Company Name */}
         <div className="flex items-center gap-2">
@@ -28,7 +36,7 @@ const Navbar = () => {
           <span className="text-2xl font-bold sm:text-3xl">The Company</span>
         </div>
 
-        {/* Search Bar - moved to be more centered on larger screens */}
+        {/* Search Bar */}
         <div className="order-last sm:order-none w-full sm:w-auto mt-4 sm:mt-0">
           <form
             className="group relative max-w-md mx-auto"
@@ -53,7 +61,7 @@ const Navbar = () => {
           </form>
         </div>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation Links */}
         <ul className="hidden sm:flex items-center gap-6">
           {menuItems.map((item) => (
             <li key={item.label}>
@@ -72,22 +80,33 @@ const Navbar = () => {
           <Darkmode />
         </div>
 
-        {/* Mobile Menu Button (optional) */}
-        <button className="sm:hidden ml-4 text-gray-700">
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
+        {/* Mobile Menu Button */}
+        <button
+          className="sm:hidden ml-4 text-gray-700"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="sm:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-800 shadow-lg rounded-b-lg p-4 z-50">
+            <ul className="flex flex-col items-start gap-4">
+              {menuItems.map((item) => (
+                <li key={item.label} className="w-full">
+                  <a
+                    href={item.href}
+                    className="block w-full text-gray-700 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300 font-medium py-2"
+                    onClick={toggleMobileMenu}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );

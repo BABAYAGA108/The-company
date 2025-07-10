@@ -22,21 +22,21 @@ const Hero = () => {
       bg: "bg-pink-500/10",
     },
     {
-      url: "mailto:your_real_email@example.com", // Updated with real email
+      url: "mailto:your_real_email@example.com", 
       icon: <IoMdMailUnread size={20} />,
       label: "Email",
       color: "hover:text-red-500",
       bg: "bg-red-500/10",
     },
     {
-      url: "https://github.com/your_real_profile", // Updated with real profile
+      url: "https://github.com/your_real_profile", 
       icon: <FaGithub size={20} />,
       label: "GitHub",
       color: "hover:text-gray-800",
       bg: "bg-gray-800/10",
     },
     {
-      url: "https://linkedin.com/in/your_real_profile", // Updated with real profile
+      url: "https://linkedin.com/in/your_real_profile", 
       icon: <FaLinkedinIn size={20} />,
       label: "LinkedIn",
       color: "hover:text-blue-600",

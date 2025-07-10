@@ -1,6 +1,12 @@
-import { FaReact, FaFigma, FaServer, FaCode } from "react-icons/fa";
-import { SiTypescript, SiNextdotjs, SiTailwindcss } from "react-icons/si";
-import aboutImage from "../../assets/images/about-profile.jpg"; // Make sure this path is correct
+import { FaReact,}from "react-icons/fa";
+import {FaFigma,}from"react-icons/fa";
+import {FaServer,}from"react-icons/fa";
+import { FaCode }from "react-icons/fa6";
+
+import { SiTypescript,}  from "react-icons/si";
+import{SiNextdotjs,}  from "react-icons/si";
+import{SiTailwindcss } from "react-icons/si";
+import aboutImage from "../../assets/images/About/About.png";
 
 const About = () => {
   const skills = [
@@ -13,17 +19,17 @@ const About = () => {
     {
       name: "Next.js",
       icon: <SiNextdotjs  />,
-      level: 80,
+      level: 70,
     },
     {
       name: "UI/UX Design",
       icon: <FaFigma />,
-      level: 75,
+      level: 95,
     },
     {
       name: "Backend",
       icon: <FaServer  />,
-      level: 70,
+      level: 50,
     },
     {
       name: "Tailwind",

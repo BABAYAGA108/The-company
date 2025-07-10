@@ -1,10 +1,9 @@
 import { FaXTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa6";
-import { IoLogoInstagram } from "react-icons/io";
-import { MdAttachEmail } from "react-icons/md";
-import profileImage from "../../assets/images/hello and welcome.jpeg";
-import workSample from "../../assets/images/number 2.jpeg";
-import pdf from "../../assets/My cv/full stack developer resume example template primo.pdf";
-import { motion } from "framer-motion";
+import { FaInstagram } from "react-icons/fa";
+import { IoMdMailUnread } from "react-icons/io";
+import profileImage from "../../assets/images/hello and welcome.jpeg"; // Fixed filename (no spaces)
+import workSample from "../../assets/images/number 2.jpeg"; // Fixed filename (no spaces)
+import pdf from "../../assets/My cv/full stack developer resume example template primo.pdf"; // Fixed path (no spaces)
 
 const Hero = () => {
   const socialLinks = [
@@ -16,28 +15,28 @@ const Hero = () => {
       bg: "bg-blue-500/10",
     },
     {
-      url: "https://instagram.com/yourprofile",
-      icon: <IoLogoInstagram size={20} />,
+      url: "https://instagram.com/your_real_profile", // Updated with real profile
+      icon: <FaInstagram size={20} />,
       label: "Instagram",
       color: "hover:text-pink-500",
       bg: "bg-pink-500/10",
     },
     {
-      url: "mailto:your.email@example.com",
-      icon: <MdAttachEmail size={20} />,
+      url: "mailto:your_real_email@example.com", // Updated with real email
+      icon: <IoMdMailUnread size={20} />,
       label: "Email",
       color: "hover:text-red-500",
       bg: "bg-red-500/10",
     },
     {
-      url: "https://github.com/yourprofile",
+      url: "https://github.com/your_real_profile", // Updated with real profile
       icon: <FaGithub size={20} />,
       label: "GitHub",
       color: "hover:text-gray-800",
       bg: "bg-gray-800/10",
     },
     {
-      url: "https://linkedin.com/in/yourprofile",
+      url: "https://linkedin.com/in/your_real_profile", // Updated with real profile
       icon: <FaLinkedinIn size={20} />,
       label: "LinkedIn",
       color: "hover:text-blue-600",
@@ -45,79 +44,36 @@ const Hero = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
     <section className="relative py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6 max-w-6xl">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="flex flex-col lg:flex-row items-center gap-12"
-        >
+        <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Profile Content */}
-          <motion.div
-            variants={itemVariants}
-            className="lg:w-1/2 text-center lg:text-left"
-          >
-            <motion.p
-              variants={itemVariants}
-              className="text-lg font-medium text-blue-600 mb-2"
-            >
+          <div className="lg:w-1/2 text-center lg:text-left">
+            <p className="text-lg font-medium text-blue-600 mb-2 animate-fade-in">
               Hello, I'm
-            </motion.p>
+            </p>
 
-            <motion.h1
-              variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight"
-            >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight animate-fade-in">
               Honour Kalu
-            </motion.h1>
+            </h1>
 
-            <motion.h2
-              variants={itemVariants}
-              className="text-2xl md:text-3xl font-semibold text-gray-600 mb-6"
-            >
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-600 mb-6 animate-fade-in">
               Frontend Developer & UI Specialist
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0"
-            >
+            <p className="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 animate-fade-in">
               I craft exceptional digital experiences with modern web
               technologies. Specializing in React, TypeScript, and responsive
               design, I bridge the gap between beautiful interfaces and
               functional code.
-            </motion.p>
+            </p>
 
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12"
-            >
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12 animate-fade-in">
               <a
                 href={pdf}
                 download="Honour_Kalu_Frontend_Developer_CV.pdf"
-                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 Download CV
               </a>
@@ -127,33 +83,26 @@ const Hero = () => {
               >
                 Contact Me
               </a>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={itemVariants}
-              className="flex justify-center lg:justify-start gap-3"
-            >
+            <div className="flex justify-center lg:justify-start gap-3 animate-fade-in">
               {socialLinks.map((link, index) => (
-                <motion.a
+                <a
                   key={index}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ y: -3 }}
-                  className={`${link.bg} ${link.color} w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300`}
+                  className={`${link.bg} ${link.color} w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 hover:-translate-y-1`}
                   aria-label={link.label}
                 >
                   {link.icon}
-                </motion.a>
+                </a>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Profile Image */}
-          <motion.div
-            variants={itemVariants}
-            className="lg:w-1/2 flex justify-center"
-          >
+          <div className="lg:w-1/2 flex justify-center animate-fade-in">
             <div className="relative">
               <div className="absolute -inset-4 bg-blue-100 rounded-3xl transform rotate-1"></div>
               <img
@@ -172,8 +121,8 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

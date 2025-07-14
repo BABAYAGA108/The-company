@@ -1,9 +1,9 @@
 import { FaXTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { IoMdMailUnread } from "react-icons/io";
-import profileImage from "../../assets/images/hello and welcome.jpeg"; // Fixed filename (no spaces)
-import workSample from "../../assets/images/number 2.jpeg"; // Fixed filename (no spaces)
-import pdf from "../../assets/My cv/full stack developer resume example template primo.pdf"; // Fixed path (no spaces)
+import profileImage from "../../assets/images/hello and welcome.jpeg"; 
+import workSample from "../../assets/images/number 2.jpeg"; 
+import pdf from "../../assets/My cv/full stack developer resume example template primo.pdf"; 
 
 const Hero = () => {
   const socialLinks = [
@@ -15,7 +15,7 @@ const Hero = () => {
       bg: "bg-blue-500/10",
     },
     {
-      url: "https://instagram.com/your_real_profile", // Updated with real profile
+      url: "https://instagram.com/your_real_profile", 
       icon: <FaInstagram size={20} />,
       label: "Instagram",
       color: "hover:text-pink-500",

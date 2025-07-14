@@ -1,42 +1,9 @@
-import { FaReact,}from "react-icons/fa";
-import {FaFigma,}from"react-icons/fa";
-import {FaServer,}from"react-icons/fa";
-import { FaCode }from "react-icons/fa6";
 
-import { SiTypescript,}  from "react-icons/si";
-import{SiNextdotjs,}  from "react-icons/si";
-import{SiTailwindcss } from "react-icons/si";
 import aboutImage from "../../assets/images/About/About.png";
 
 const About = () => {
-  const skills = [
-    { name: "React", icon: <FaReact  />,  level: 90 }, 
-    {
-      name: "TypeScript",
-      icon: <SiTypescript />,
-      level: 85,
-    },
-    {
-      name: "Next.js",
-      icon: <SiNextdotjs  />,
-      level: 70,
-    },
-    {
-      name: "UI/UX Design",
-      icon: <FaFigma />,
-      level: 95,
-    },
-    {
-      name: "Backend",
-      icon: <FaServer  />,
-      level: 50,
-    },
-    {
-      name: "Tailwind",
-      icon: <SiTailwindcss />,
-      level: 95,
-    },
-  ];
+ 
+  ;
 
   return (
     <section id="about" className="py-20 bg-gray-50">
@@ -86,35 +53,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* Skills */}
-            <div className="mb-8">
-              <h4 className="text-xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
-                <FaCode />
-                <span>My Skills</span>
-              </h4>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {skills.map((skill, index) => (
-                  <div key={index} className="mb-4">
-                    <div className="flex justify-between items-center mb-2">
-                      <div className="flex items-center gap-2">
-                        {skill.icon}
-                        <span className="font-medium">{skill.name}</span>
-                      </div>
-                      <span className="text-sm text-gray-500">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
-                      <div
-                        className="bg-blue-600 h-2.5 rounded-full"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* Call to Action */}
             <div className="flex flex-wrap gap-4">

@@ -41,13 +41,13 @@ const Skills = () => {
   ];
 
   return (
-    <div className="mb-8 p-6 bg-white rounded-xl shadow-md">
+    <div className="container mx-auto px-6 max-w-6xl">
       <h4 className="text-xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
-        <FaCode color= "#61DAFB" />
+        <FaCode color="#61DAFB" />
         <span>My Skills</span>
       </h4>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="space-y-4 text-gray-600 mb-8 md:grid-cols-2 gap-6 w-full">
         {skills.map((skill, index) => (
           <div key={index} className="mb-4">
             <div className="flex justify-between items-center mb-2">
@@ -61,7 +61,7 @@ const Skills = () => {
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5">
               <div
-                className="bg-gradient-to-r from-blue-500 to-blue-600 h-2.5 rounded-full transition-all duration-500"
+                className="bg-gradient-to-r from-blue-500 to-blue-400 h-2.5 rounded-full transition-all duration-500"
                 style={{ width: `${skill.level}%` }}
               ></div>
             </div>

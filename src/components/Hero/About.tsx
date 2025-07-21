@@ -1,15 +1,31 @@
-
+import { Link } from "react-router-dom";
 import aboutImage from "../../assets/images/About/About.png";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const About = () => {
- 
-  ;
+  const socialLinks = [
+    {
+      icon: <FaGithub size={20} />,
+      url: "https://github.com/yourusername",
+      label: "GitHub",
+    },
+    {
+      icon: <FaLinkedin size={20} />,
+      url: "https://linkedin.com/in/yourprofile",
+      label: "LinkedIn",
+    },
+    {
+      icon: <FaTwitter size={20} />,
+      url: "https://twitter.com/yourhandle",
+      label: "Twitter",
+    },
+  ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             About <span className="text-blue-600">Me</span>
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
@@ -22,19 +38,19 @@ const About = () => {
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl opacity-75 group-hover:opacity-100 transition-all duration-500 rotate-1"></div>
               <img
                 src={aboutImage}
-                alt="Honour Kalu Profile"
-                className="relative w-full max-w-sm rounded-2xl shadow-xl border-8 border-white z-10 transform group-hover:-rotate-1 transition-transform duration-500"
+                alt="Profile Picture"
+                className="relative w-full max-w-sm rounded-2xl shadow-xl border-8 border-white dark:border-gray-700 z-10 transform group-hover:-rotate-1 transition-transform duration-500"
               />
             </div>
           </div>
 
           {/* About Content */}
           <div className="lg:w-2/3">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
               Frontend Developer & UI Enthusiast
             </h3>
 
-            <div className="space-y-4 text-gray-600 mb-8">
+            <div className="space-y-4 text-gray-600 dark:text-gray-300 mb-8">
               <p>
                 With over 3 years of experience in web development, I specialize
                 in creating responsive, accessible, and performant user
@@ -42,32 +58,47 @@ const About = () => {
               </p>
               <p>
                 My journey began with basic HTML/CSS and has evolved into
-                building complex applications with modern frameworks. I believe
-                in writing clean, maintainable code while staying updated with
-                industry trends.
+                building complex applications with modern frameworks like React,
+                Next.js, and Vue. I believe in writing clean, maintainable code
+                while staying updated with industry trends.
               </p>
               <p>
                 When I'm not coding, you'll find me contributing to open-source
                 projects, exploring new design tools, or mentoring aspiring
-                developers.
+                developers through coding communities.
               </p>
             </div>
 
+            {/* Social Links */}
+            <div className="flex gap-4 mb-8">
+              {socialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                  aria-label={link.label}
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
 
             {/* Call to Action */}
             <div className="flex flex-wrap gap-4">
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow hover:shadow-md transition-all"
               >
                 Hire Me
-              </a>
-              <a
-                href="#projects"
-                className="px-6 py-3 border border-gray-300 hover:border-blue-500 text-gray-700 hover:text-blue-600 font-medium rounded-lg shadow-sm hover:shadow-md transition-all"
+              </Link>
+              <Link
+                to="/projects"
+                className="px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-blue-500 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium rounded-lg shadow-sm hover:shadow-md transition-all"
               >
                 View Projects
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -14,14 +14,14 @@ const Hero = () => {
       bg: "bg-blue-500/10",
     },
     {
-      url: "https://instagram.com/your_real_profile",
+      url: "https://www.instagram.com/kaluhonour/",
       icon: <FaInstagram size={20} />,
       label: "Instagram",
       color: "hover:text-pink-500",
       bg: "bg-pink-500/10",
     },
     {
-      url: "mailto:your_real_email@example.com",
+      url: "",
       icon: <IoMdMailUnread size={20} />,
       label: "Email",
       color: "hover:text-red-500",

@@ -1,3 +1,4 @@
+import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/the company logo.jpeg";
 import { SlMagnifier } from "react-icons/sl";
@@ -5,11 +6,11 @@ import { FiMenu, FiX } from "react-icons/fi";
 import Darkmode from "../Darkmode";
 
 const menuItems = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#" },
-  { label: "Project", href: "#" },
-  { label: "Skills", href: "#" }, // Removed comma
-  { label: "Contact", href: "#" },
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Projects", path: "/projects" },
+  { label: "Skills", path: "/skills" },
+  { label: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {
@@ -24,8 +25,8 @@ const Navbar = () => {
       <div className="container mx-auto flex flex-wrap justify-between items-center px-4">
         {/* Logo and Company Name */}
         <div className="flex items-center gap-2">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="w-14 h-14 flex items-center justify-center rounded overflow-hidden"
           >
             <img
@@ -33,7 +34,7 @@ const Navbar = () => {
               alt="Company logo"
               className="object-contain w-12 h-12 rounded-bl-full"
             />
-          </a>
+          </Link>
           <span className="text-2xl font-bold sm:text-3xl dark:text-white">
             The Company
           </span>
@@ -69,12 +70,16 @@ const Navbar = () => {
         <ul className="hidden sm:flex items-center gap-6">
           {menuItems.map((item) => (
             <li key={item.label}>
-              <a
-                href={item.href}
-                className="text-gray-700 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300 font-medium"
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  `text-gray-700 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300 font-medium ${
+                    isActive ? "text-orange-500 font-semibold" : ""
+                  }`
+                }
               >
                 {item.label}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -100,13 +105,17 @@ const Navbar = () => {
             <ul className="flex flex-col items-start gap-4">
               {menuItems.map((item) => (
                 <li key={item.label} className="w-full">
-                  <a
-                    href={item.href}
-                    className="block w-full text-gray-700 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300 font-medium py-2"
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      `block w-full text-gray-700 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300 font-medium py-2 ${
+                        isActive ? "text-orange-500 font-semibold" : ""
+                      }`
+                    }
                     onClick={toggleMobileMenu}
                   >
                     {item.label}
-                  </a>
+                  </NavLink>
                 </li>
               ))}
             </ul>

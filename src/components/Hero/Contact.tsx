@@ -55,7 +55,7 @@ const Contact = () => {
               <input
                 id="name"
                 type="text"
-                placeholder="hello john"
+                placeholder="Name"
                 className="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                 required
               />
@@ -70,7 +70,7 @@ const Contact = () => {
               <input
                 id="email"
                 type="email"
-                placeholder="john@example.com"
+                placeholder="mail@example.com"
                 className="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                 required
               />

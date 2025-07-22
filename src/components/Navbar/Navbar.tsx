@@ -108,7 +108,7 @@ const Navbar = () => {
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
-                      `block w-full text-gray-700 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300 font-medium py-2 ${
+                      `block w-full text-gray-700 dark:text-gray-200 hover:text-blue-500 transition-colors duration-300 font-medium py-2 ${
                         isActive ? "text-orange-500 font-semibold" : ""
                       }`
                     }

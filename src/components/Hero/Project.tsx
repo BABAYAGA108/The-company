@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import image1 from "../../assets/Project/killing bite.png";
 import image2 from "../../assets/Project/Sonic Excellence.png";
 import image3 from "../../assets/Project/Exodus Pediatrics.png";
+import image4 from "../../assets/Project/Netflix.png";
 import { FaExternalLinkAlt, FaGithub, FaArrowRight } from "react-icons/fa";
 
 const Projects = () => {
@@ -34,6 +35,15 @@ const Projects = () => {
       tech: ["React", "TypeScript", "Firebase", "Chart.js"],
       demoLink: "https://exdous-108.vercel.app/",
       codeLink: "https://github.com/BABAYAGA108/exdous-108.git",
+    },
+    {
+      id: 3,
+      title: "Netflix",
+      image: image4,
+      description: "netfilx.",
+      tech: ["React", "TypeScript", "Firebase", "Chart.js"],
+      demoLink: "https://netflix-sandy-alpha.vercel.app/",
+      codeLink: "https://github.com/BABAYAGA108/Netflix.git",
     },
   ];
 
